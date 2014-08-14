@@ -25,18 +25,18 @@ window.onresize = function() {
 
 var radar = document.getElementById("radar").getContext("2d");
 var radar_data = {
-            labels: ["Team Work", "Coding", "PR", "Academic", "Testing", "Innovation", "Project Management"],
+            labels: ["Team Work", "Coding", "Testing", "Academic", "Innovation", "Community", "Project Management"],
             datasets: [
-            // {
-            //     label: "My First dataset",
-            //     fillColor: "rgba(220,220,220,0.2)",
-            //     strokeColor: "rgba(220,220,220,1)",
-            //     pointColor: "rgba(220,220,220,1)",
-            //     pointStrokeColor: "#fff",
-            //     pointHighlightFill: "#fff",
-            //     pointHighlightStroke: "rgba(220,220,220,1)",
-            //     data: [65, 59, 90, 81, 56, 55, 40]
-            // },
+            {
+                label: "Country Average",
+                fillColor: "rgba(220,220,220,0.2)",
+                strokeColor: "rgba(220,220,220,1)",
+                pointColor: "rgba(220,220,220,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(220,220,220,1)",
+                data: [65, 60, 90, 55, 25, 35, 70]
+            },
             {
                 label: "My Second dataset",
                 fillColor: "rgba(151,187,205,0.2)",
@@ -45,7 +45,7 @@ var radar_data = {
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(151,187,205,1)",
-                data: [28, 48, 40, 19, 96, 27, 100]
+                data: [65, 70, 40, 70, 90, 70, 50]
             }
             ]
         };
