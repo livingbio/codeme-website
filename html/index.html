@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>CodeMe - Free One Page Theme for Bootstrap 3</title>
+    <title>CodeMe</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -33,7 +33,27 @@
         overflow: hidden;
         width: 250px;
     }
-
+    .top-buffer { margin-top:150px; }
+    .feature-topic {
+        margin:20px 0 10px 0;
+        color: rgb(51, 153, 204);;
+        font-family: 'Helvetica Neue', Arial, sans;
+        font-size: 28px;
+        font-weight: 200;
+    }
+    .feature-detail {
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: normal;
+    }
+    #team {
+        /*background: url(../img/team.jpg);*/
+        height:100%;
+        padding:50px;
+        margin-top: 50px;
+        background-color: rgb(50,50,50);
+    }
     </style>
 </head>
 
@@ -113,7 +133,37 @@
             </div>
         </div>
     </section>
-    <section id="contact" class="container content-section text-center">
+    <secton id="feature" class="container content-section text-left">
+        <div class="row top-buffer">
+            <div class="col-lg-4 col-lg-offset-2">
+                <span class="feature-topic">Get organized now!</span>
+                <p class="feature-detail">No setup time. #hashtags are a fast and simple way to get your team organized. It works like your brain. You have a thought and you put it in. We take care of the rest.</p>
+            </div>
+            <div class="col-lg-4">
+                <img src="/img/feature.png">
+            </div>
+        </div>
+        <div class="row top-buffer">
+            <div class="col-lg-4 col-lg-offset-2">
+                <img src="/img/feature.png">
+            </div>
+            <div class="col-lg-4" style="margin-left: 70px">
+                <span class="feature-topic">Get organized now!</span>
+                <p class="feature-detail">No setup time. #hashtags are a fast and simple way to get your team organized. It works like your brain. You have a thought and you put it in. We take care of the rest.</p>
+            </div>
+        </div>
+        <div class="row top-buffer">
+            <div class="col-lg-4 col-lg-offset-2">
+                <span class="feature-topic">Get organized now!</span>
+                <p class="feature-detail">No setup time. #hashtags are a fast and simple way to get your team organized. It works like your brain. You have a thought and you put it in. We take care of the rest.</p>
+            </div>
+            <div class="col-lg-4">
+                <img src="/img/feature.png">
+            </div>
+        </div>
+    </secton>
+
+    <!-- <section id="contact" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Contact Start Bootstrap</h2>
@@ -129,8 +179,9 @@
                 </ul>
             </div>
         </div>
-    </section>
+    </section> -->
     <section id="team" class="content-section text-center">
+        <!-- <div class="team-section" style="background-color:rgb(75,75,75);height:500px;padding:50px"> -->
         <div class="team-section">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
@@ -138,7 +189,7 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="crop">
-                    <img class="grayscale" style="width:250px; height:250px" src="img/juching.jpg">
+                    <img class="grayscale" style="width:250px; height:250px" src="img/agnes.jpg">
                     </div>
                     <br/>
                     <h4>JuChing Peng</h4>
@@ -146,7 +197,7 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="crop">
-                    <img class="grayscale" style="width:250px; height:250px" src="img/david.jpg">
+                    <img class="grayscale" style="width:250px; height:250px" src="img/avatar-david.jpg">
                     </div>
                     <br/>
                     <h4>David Chen</h4>
@@ -167,12 +218,12 @@
                     </div>
                     <br/>
                     <h4>Max Tseng</h4>
-                    Beef or Chicken
+                    CIA
                 </div>
             </div>
         </section>
 
-        <div id="map"></div>
+        <!-- <div id="map"></div> -->
 
         <!-- Core JavaScript Files -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
