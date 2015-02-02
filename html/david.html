@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>David's Resume</title>
@@ -11,118 +12,275 @@
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
-        <script type="text/javascript" src="media/Chart.min.js"></script>
-        <script type="text/javascript" src="media/chart_option.js"></script>
-  </head>
-  <body>
+    <script type="text/javascript" src="media/Chart.min.js"></script>
+    <script type="text/javascript" src="media/chart_option.js"></script>
+    <script type="text/javascript" src="/js/vis.js"></script>
+    <link href="/css/vis.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+    <!-- Button trigger modal -->
+    <!-- demo certification -->
+    <div id="dialog-cert" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Certification</h4>
+                </div>
+                <div class="modal-body row">
+                    <div class="col-md-3">
+                        <img src="/img/benefits_iipmr.png">
+                        <br/>
+                        <h5 stlye="text-align: center">Authorized by <strong>NCTU</strong></h5>
+                    </div>
+                    <div class="col-md-9">
+                        <h2>Chien Hsun David Chen</h2>
+                        <h5>
+                            <ul>
+                                <li>ranked
+                                    <strong>25th/100</strong>in Computer Science
+                                </li>
+                                <li>
+                                    Focus on
+                                    <strong>Programming Language</strong>,
+                                    <strong>Evolution Computation</strong>
+                                </li>
+                            </ul>
+                        </h5>
+                        <h2>National Chiao Chung University</h2>
+                        <h5>
+                            <ul>
+                                <li>ranked
+                                    <strong>3rd</strong>in Computer Science in 2012 in Taiwan.
+                                </li>
+                                <li>ranked
+                                    <strong>47th</strong>in Computer Science in 2012 world wide.
+                                </li>
+
+                            </ul>
+                        </h5>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- demo social network -->
+    <div id="dialog-network" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Social Network</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="mynetwork"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- demo PORTFOLIO -->
+    <div id="dialog-portfolio" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Talk in Google Dev Day</h4>
+                </div>
+                <div class="modal-body">
+                    <iframe width="560" height="315" src="//www.youtube.com/embed/cJS2AcNP4f0" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- demo SKILL -->
+    <div id="dialog-skill" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span>
+                        <span class="sr-only">Close</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Skill Rank</h4>
+                </div>
+                <div class="modal-body">
+                    <iframe src="iframe.html" style="width:100%;height:600px" frameborder="0"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- demo -->
+
+
     <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div id="photo-header" class="text-center">
-            <!-- PHOTO (AVATAR) -->
-            <div id="photo">
-              <img src="img/avatar-david.jpg" alt="avatar">
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="photo-header" class="text-center">
+                    <!-- PHOTO (AVATAR) -->
+                    <div id="photo">
+                        <img src="img/avatar-david.jpg" alt="avatar">
+                    </div>
+                    <div id="text-header">
+                        <h1>Hello,
+                            <br>my name is
+                            <span>David</span><sup>Chen</sup> and this is my resume/cv</h1>
+                    </div>
+                </div>
             </div>
-            <div id="text-header">
-              <h1>Hello,<br> my name is <span>David</span><sup>Chen</sup> and this is my resume/cv</h1>
-            </div>
-          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12 col-sm-7">
-          <!-- ABOUT ME -->
-          <div class="box">
-            <h2>About Me</h2>
-            <p>Research is my passion, and I have been actively pursuing it ever since I entered
-graduate school National Chio Tung University (NCTU). I discovered my research ability
-when I entered the graduate school of Computer Science and Engineering in 2004, and I
-continued to be involved in researches and publications around various topics. In this
-period, I have published papers in journals and joined conferences such as Games, HCI,
-Optimization and Services Robotics areas.
-</p>
-          </div>
-          <!-- EDUCATION -->
-          <div class="box">
-            <h2>Education</h2>
-            <ul id="education" class="clearfix">
-              <li>
-                <div class="year pull-left">2004</div>
-                <div class="description pull-right">
-                  <h3>National Chiao Tung University</h3>
-                  <p>Applied Mathematic</p>
+        <div class="row">
+            <div class="col-xs-12 col-sm-7">
+                <!-- ABOUT ME -->
+                <div class="box">
+                    <h2>About Me</h2>
+                    <!--             <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button> -->
+                    <p>Research is my passion, and I have been actively pursuing it ever since I entered graduate school National Chio Tung University (NCTU). I discovered my research ability when I entered the graduate school of Computer Science and Engineering in 2004, and I continued to be involved in researches and publications around various topics. In this period, I have published papers in journals and joined conferences such as Games, HCI, Optimization and Services Robotics areas.
+                    </p>
                 </div>
-              </li>
-              <li>
-                <div class="year pull-left">2006</div>
-                <div class="description pull-right">
-                  <h3>National Chiao Tung University</h3>
-                  <p>Master of Computer Science</p>
+                <!-- EDUCATION -->
+                <div class="box">
+                    <h2>Education</h2>
+                    <ul id="education" class="clearfix">
+                        <li>
+                            <div class="year pull-left">2004</div>
+                            <div class="description pull-right">
+                                <h3>National Chiao Tung University</h3>
+                                <p>Applied Mathematic</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="year pull-left">2006</div>
+                            <div class="description pull-right" data-toggle="modal" data-target="#dialog-cert">
+                                <h3>National Chiao Tung University</h3>
+                                <p>Master of Computer Science</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="year pull-left">2012</div>
+                            <div class="description pull-right">
+                                <h3>Washington University</h3>
+                                <p>Computational Finance</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="year pull-left">2014</div>
+                            <div class="description pull-right">
+                                <h3>Udacity</h3>
+                                <p>Data Scientist</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-              </li>
-              <li>
-                <div class="year pull-left">2012</div>
-                <div class="description pull-right">
-                  <h3>Washington University</h3>
-                  <p>Computational Finance</p>
+                <!-- EXPERIENCES -->
+                <div class="box">
+                    <h2>Experiences</h2>
+                    <div class="job clearfix">
+                        <div class="col-xs-3">
+                            <div class="where">Google Developer Expert</div>
+                            <div class="year">2014 -</div>
+                        </div>
+                        <div class="col-xs-9">
+                            <div class="profession">Cloud GDE</div>
+                            <div class="description">Introduce Google Tech to local community. Give talks in many community events include the google data center launch event in Taiwan</div>
+                        </div>
+                    </div>
+                    <div class="job clearfix">
+                        <div class="col-xs-3">
+                            <div class="where">PyCon Apac</div>
+                            <div class="year">2014</div>
+                        </div>
+                        <div class="col-xs-9">
+                            <div class="profession">PR Chair</div>
+                            <div class="description">Help marketing PYCON APAC 2014 event. I lead a team of 8 media press in all major tech media in Taiwan. Successfully increase 70% of tickets sales.</div>
+                        </div>
+                    </div>
+                    <div class="job clearfix">
+                        <div class="col-xs-3">
+                            <div class="where">Tagtoo</div>
+                            <div class="year">2014</div>
+                        </div>
+                        <div class="col-xs-9">
+                            <div class="profession">CTO</div>
+                            <div class="description">Creating RTB Service. Design & develop Cloud based Internet advertisement architecture. Lead RD Team</div>
+                        </div>
+                    </div>
                 </div>
-              </li>
-              <li>
-                <div class="year pull-left">2014</div>
-                <div class="description pull-right">
-                  <h3>Udacity</h3>
-                  <p>Data Scientist</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <!-- EXPERIENCES -->
-          <div class="box">
-            <h2>Experiences</h2>
-            <div class="job clearfix">
-              <div class="col-xs-3">
-                <div class="where">Google Developer Expert</div>
-                <div class="year">2014 - </div>
-              </div>
-              <div class="col-xs-9">
-                <div class="profession">Cloud GDE</div>
-                <div class="description">Introduce Google Tech to local community. Give talks in many community events include the google data center launch event in Taiwan</div>
-              </div>
+                <div class="box job">
+                    <h2>Portfolio</h2>
+                    <div class="row">
+                        <div class="col-xs-3" data-toggle="modal" data-target="#dialog-portfolio">
+                            <img src="/img/youtube-google.jpg" style="width:100%">
+                        </div>
+                        <div class="col-xs-9">
+                            <div class="profession">Talk in Google Cloud dev days</div>
+                            <p>I gave a talk in Google Cloud Platform Asia Launch event to describe how Google Cloud Platform can benefit internet startup company. There are lots of positive feedbacks received.
+                                <strong>more than 600 developers and CIO participated.</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-xs-3" data-toggle="modal" data-target="#dialog-portfolio">
+                            <img src="/img/bigdatalab.png" style="width:100%">
+                        </div>
+                        <div class="col-xs-9">
+                            <div class="profession">BigData Lab</div>
+                            <p>
+                                Deal with huge amount of data in your browser, and be at Google's speed.
+                                <strong>Finalist in gcdc2013</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-xs-3" data-toggle="modal" data-target="#dialog-portfolio">
+                            <img src="/img/repo.png" style="width:100%">
+                        </div>
+                        <div class="col-xs-9">
+                            <div class="profession">doT.py</div>
+                            <p>
+                                A python implementation of the famous js template engine. doT.js. http://olado.github.io/doT/index.html. It do excetly the same thing as doT.js except written in python. Thus, it can be used in python web framework.
+                                <br/>
+                                <strong>★ 255</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <!--   <div class="profession">CTO</div>
+                <div class="description">Presentation in Google Dev Day</div>
+           --></div>
             </div>
-            <div class="job clearfix">
-              <div class="col-xs-3">
-                <div class="where">PyCon Apac</div>
-                <div class="year">2014</div>
-              </div>
-              <div class="col-xs-9">
-                <div class="profession">PR Chair</div>
-                <div class="description">Help marketing PYCON APAC 2014 event. I lead a team of 8 media press in all major tech media in Taiwan. Successfully increase 70% of tickets sales.</div>
-              </div>
-            </div>
-            <div class="job clearfix">
-              <div class="col-xs-3">
-                <div class="where">Tagtoo</div>
-                <div class="year">2014</div>
-              </div>
-              <div class="col-xs-9">
-                <div class="profession">CTO</div>
-                <div class="description">Creating RTB Service. Design & develop Cloud based Internet advertisement architecture. Lead RD Team</div>
-              </div>
-            </div>
-          </div>
-          <div class="box">
-            <h2>Portfolio</h2>
+            <div class="col-xs-12 col-sm-5">
+                <!-- CONTACT -->
+                <div class="box clearfix" data-toggle="modal" data-target="#dialog-network">
+                    <h2>Skill</h2>
 
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-5">
-          <!-- CONTACT -->
-          <div class="box clearfix">
-            <h2>Skill</h2>
-
-              <canvas id="radar" width="400" height="400"></canvas>
-          </div>
-          <!-- <div class="box clearfix">
+                    <canvas id="radar" width="400" height="400"></canvas>
+                </div>
+                <!-- <div class="box clearfix">
             <h2>Contact</h2>
             <div class="contact-item">
               <div class="icon pull-left text-center"><span class="fa fa-phone fa-fw"></span></div>
@@ -148,40 +306,52 @@ Optimization and Services Robotics areas.
               <div class="description pull-right">kamsolutions.pl</div>
             </div>
           </div> -->
-          <!-- SKILLS -->
-          <div class="box">
-            <h2>Skills</h2>
-            <div class="skills">
-              <div class="item-skills" data-percent="1.00">Python</div>
-              <div class="item-skills" data-percent="0.90">Google Cloud</div>
-              <div class="item-skills" data-percent="0.80">Cloud Computing</div>
-              <div class="item-skills" data-percent="0.75">Data Analysis</div>
-              <div class="item-skills" data-percent="0.25">Javascript</div>
-              <div class="skills-legend clearfix">
-                <div class="legend-left legend">Beginner</div>
-                <div class="legend-left legend"><span>Proficient</span></div>
-                <div class="legend-right legend"><span>Expert</span></div>
-                <div class="legend-right legend">Master</div>
-              </div>
+                <!-- SKILLS -->
+                <div class="box">
+                    <h2>Skills</h2>
+                    <div class="skills" data-toggle="modal" data-target="#dialog-skill">
+                        <div class="item-skills" data-percent="1.00">Python</div>
+                        <div class="item-skills" data-percent="0.90">Google Cloud</div>
+                        <div class="item-skills" data-percent="0.80">Cloud Computing</div>
+                        <div class="item-skills" data-percent="0.75">Data Analysis</div>
+                        <div class="item-skills" data-percent="0.25">Javascript</div>
+                        <div class="skills-legend clearfix">
+                            <div class="legend-left legend">Beginner</div>
+                            <div class="legend-left legend">
+                                <span>Proficient</span>
+                            </div>
+                            <div class="legend-right legend">
+                                <span>Expert</span>
+                            </div>
+                            <div class="legend-right legend">Master</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- LANGUAGES -->
+                <div class="box">
+                    <h2>Languages</h2>
+                    <div id="language-skills">
+                        <div class="skill">Chinese
+                            <div class="icons pull-right">
+                                <div style="width: 80%;" class="icons-red"></div>
+                            </div>
+                        </div>
+                        <div class="skill">English
+                            <div class="icons pull-right">
+                                <div style="width: 60%;" class="icons-red"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- HOBBIES -->
+                <div class="box">
+                    <h2>Hobbies</h2>
+                    <div class="hobby">Coding</div>
+                    <div class="hobby">Hacking</div>
+                    <div class="hobby">Programming</div>
+                </div>
             </div>
-          </div>
-          <!-- LANGUAGES -->
-          <div class="box">
-            <h2>Languages</h2>
-            <div id="language-skills">
-              <div class="skill">Chinese <div class="icons pull-right"><div style="width: 80%;" class="icons-red"></div></div></div>
-              <div class="skill">English <div class="icons pull-right"><div style="width: 60%;" class="icons-red"></div></div></div>
-            </div>
-          </div>
-          <!-- HOBBIES -->
-          <div class="box">
-            <h2>Hobbies</h2>
-            <div class="hobby">Coding</div>
-            <div class="hobby">Hacking</div>
-            <div class="hobby">Programming</div>
-          </div>
         </div>
-      </div>
     </div>
     <!--http://wrapbootstrap.com/preview/WB0265951-->
     <!-- JQUERY -->
@@ -191,5 +361,6 @@ Optimization and Services Robotics areas.
     <!-- SCRIPTS -->
     <script src="js/scripts.js"></script>
 
-  </body>
+</body>
+
 </html>
